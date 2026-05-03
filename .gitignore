@@ -1,0 +1,65 @@
+# =========================
+# Node.js
+# =========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =========================
+# Environment variables (VERY IMPORTANT)
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# Sensitive files (IMPORTANT)
+# =========================
+serviceAccount.json
+serviceAccount*.json
+*.pem
+*.key
+
+# =========================
+# Logs
+# =========================
+logs/
+*.log
+
+# =========================
+# Build / production
+# =========================
+dist/
+build/
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# IDE / Editor
+# =========================
+.vscode/
+.idea/
+*.swp
+
+# =========================
+# Temporary files
+# =========================
+tmp/
+temp/
+*.tmp
+
+# =========================
+# Coverage
+# =========================
+coverage/
+
+# =========================
+# Optional (uncomment if needed)
+# =========================
+# package-lock.json
+# yarn.lock
