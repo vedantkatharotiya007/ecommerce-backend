@@ -1,6 +1,5 @@
 import express from "express";
 import cors from "cors";
-import connectDB from "./config/db.js";
 import passport from "passport";
 import cookieParser from "cookie-parser";
 import userRoutes from "./routes/user.routes.js";
@@ -13,7 +12,6 @@ import Address from "./routes/address.routes.js";
 import paymentRoutes from "./routes/payment.routes.js";
 import savefcmtoken from "./routes/fcmtoken.routes.js";
 const app = express();
-connectDB();
 app.use(
   cors({
     origin: [

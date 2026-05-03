@@ -3,7 +3,10 @@ import User from "../models/user.js";
 
 const connectDB = async () => {
   try {
-    await mongoose.connect("mongodb://localhost:27017/testDB");
+
+    console.log("url is", process.env.MONGO_URI);
+    
+    await mongoose.connect(process.env.MONGO_URI);
     console.log("✅ MongoDB connected");
  await User.syncIndexes();
   } catch (error) {
