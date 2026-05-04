@@ -12,25 +12,30 @@ import Address from "./routes/address.routes.js";
 import paymentRoutes from "./routes/payment.routes.js";
 import savefcmtoken from "./routes/fcmtoken.routes.js";
 const app = express();
+app.get("/", (req, res) => {
+  console.log("ROOT HIT");
+  res.send("API LIVE");
+});
 app.use((req, res, next) => {
   console.log("Incoming request:", req.method, req.url);
   next();
 });
-app.use(
-  cors({
-    origin: [
-      "http://localhost:3002",
-      "https://unrecondite-oversadly-collins.ngrok-free.dev",
-    ],
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: [
-      "Content-Type",
-      "Authorization",
-      "ngrok-skip-browser-warning",
-    ],
-  })
-);
+// app.use(
+//   cors({
+//     origin: [
+//       "http://localhost:3002",
+//       "https://unrecondite-oversadly-collins.ngrok-free.dev",
+//     ],
+//     credentials: true,
+//     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+//     allowedHeaders: [
+//       "Content-Type",
+//       "Authorization",
+//       "ngrok-skip-browser-warning",
+//     ],
+//   })
+// );
+app.use(cors());
 app.use(cookieParser());
 app.use((req, res, next) => {
   if (req.originalUrl === "/api/payment/webhook") {
