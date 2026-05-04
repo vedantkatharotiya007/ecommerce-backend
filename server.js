@@ -58,6 +58,10 @@ io.on("connection", (socket) => {
 export { io };
 // Change 'app.listen' to 'server.listen'
 server.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-  console.log(`Socket.IO is active and listening for connections`);
+  const host = process.env.RENDER_EXTERNAL_URL || "localhost";
+
+  console.log("==================================");
+  console.log("🚀 SERVER RUNNING");
+  console.log(`🌐 URL: ${host}:${PORT}`);
+  console.log("==================================");
 });
