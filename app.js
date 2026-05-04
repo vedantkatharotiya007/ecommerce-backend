@@ -13,6 +13,7 @@ import paymentRoutes from "./routes/payment.routes.js";
 import savefcmtoken from "./routes/fcmtoken.routes.js";
 const app = express();
 app.get("/whoami", (req, res) => {
+  console.log("ROOT HIT");
   res.json({
     port: process.env.PORT,
     time: new Date(),
