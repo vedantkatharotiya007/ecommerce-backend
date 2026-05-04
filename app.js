@@ -12,6 +12,10 @@ import Address from "./routes/address.routes.js";
 import paymentRoutes from "./routes/payment.routes.js";
 import savefcmtoken from "./routes/fcmtoken.routes.js";
 const app = express();
+app.use((req, res, next) => {
+  console.log("Incoming request:", req.method, req.url);
+  next();
+});
 app.use(
   cors({
     origin: [
