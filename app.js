@@ -12,6 +12,13 @@ import Address from "./routes/address.routes.js";
 import paymentRoutes from "./routes/payment.routes.js";
 import savefcmtoken from "./routes/fcmtoken.routes.js";
 const app = express();
+app.get("/whoami", (req, res) => {
+  res.json({
+    port: process.env.PORT,
+    time: new Date(),
+    msg: "THIS IS CURRENT DEPLOYMENT"
+  });
+});
 app.get("/", (req, res) => {
   console.log("ROOT HIT");
   res.send("API LIVE");
