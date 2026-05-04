@@ -22,7 +22,7 @@ connectDB();
 import app from "./app.js";
 await import("./config/passport.js");
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const server = http.createServer(app);
 
 
